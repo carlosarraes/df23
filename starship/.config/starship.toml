@@ -4,7 +4,7 @@ right_format = """$all"""
 palette = "catppuccin_mocha"
 
 [directory]
-truncation_length = 2
+truncation_length = 3
 truncation_symbol = '…/'
 disabled = false
 
