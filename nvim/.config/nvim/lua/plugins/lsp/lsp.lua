@@ -11,11 +11,14 @@ return {
 
 		local capabilities = cmp.default_capabilities()
 		local on_attach = function(client, bufnr)
+			local on_list = require("plugins.lsp.ignore-modules")
 			local opts = { noremap = true, silent = true, buffer = bufnr }
 			local bind = vim.keymap.set
 
+			vim.keymap.set("n", "gd", function()
+				vim.lsp.buf.definition({ on_list = on_list })
+			end, opts)
 			bind("n", "gD", "<cmd>Telescope lsp_references<CR>", opts) -- show references
-			bind("n", "gd", vim.lsp.buf.definition, opts) -- show declaration
 			bind("n", "gr", "<cmd>Telescope lsp_references<CR>", opts) -- show references
 			bind("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show references
 			bind("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- go to implementation
