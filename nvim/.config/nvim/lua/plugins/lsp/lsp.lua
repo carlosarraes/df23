@@ -36,8 +36,8 @@ return {
 
 			if client.name == "tsserver" then
 				bind("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
-				bind("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports
 				bind("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables
+				bind("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports
 			end
 		end
 
