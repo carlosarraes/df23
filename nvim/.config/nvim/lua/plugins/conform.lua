@@ -5,6 +5,10 @@ return {
 		"BufNewFile",
 	},
 	config = function()
+		if vim.g.vscode then
+			return
+		end
+
 		local conform = require("conform")
 		local save_config = {
 			lsp_fallback = true,

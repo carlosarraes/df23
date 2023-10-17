@@ -9,6 +9,10 @@ return {
 		"gbprod/yanky.nvim",
 	},
 	config = function()
+		if vim.g.vscode then
+			return
+		end
+
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 		local yanky = require("yanky")

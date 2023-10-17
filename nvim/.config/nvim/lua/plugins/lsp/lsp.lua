@@ -6,6 +6,10 @@ return {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 	},
 	config = function()
+		if vim.g.vscode then
+			return
+		end
+
 		local lspconfig = require("lspconfig")
 		local cmp = require("cmp_nvim_lsp")
 

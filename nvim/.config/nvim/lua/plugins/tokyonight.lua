@@ -4,6 +4,10 @@ return {
 	lazy = false,
 	opts = {},
 	config = function()
+		if vim.g.vscode then
+			return
+		end
+
 		local tokyonight = require("tokyonight")
 
 		tokyonight.setup({

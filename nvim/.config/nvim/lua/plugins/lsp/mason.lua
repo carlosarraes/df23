@@ -5,6 +5,10 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer",
 	},
 	config = function()
+		if vim.g.vscode then
+			return
+		end
+
 		local mason = require("mason")
 		local mason_lsp = require("mason-lspconfig")
 		local mason_tool = require("mason-tool-installer")

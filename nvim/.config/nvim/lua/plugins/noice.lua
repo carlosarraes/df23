@@ -6,6 +6,10 @@ return {
 		"rcarriga/nvim-notify",
 	},
 	config = function()
+		if vim.g.vscode then
+			return
+		end
+
 		local noice = require("noice")
 
 		noice.setup({

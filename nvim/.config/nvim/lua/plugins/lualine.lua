@@ -1,6 +1,10 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	config = function()
+		if vim.g.vscode then
+			return
+		end
+
 		require("lualine").setup({
 			options = {
 				theme = "tokyonight",

@@ -3,6 +3,10 @@ return {
 	cmd = "Copilot",
 	event = "InsertEnter",
 	config = function()
+		if vim.g.vscode then
+			return
+		end
+
 		local copilot = require("copilot")
 
 		copilot.setup({

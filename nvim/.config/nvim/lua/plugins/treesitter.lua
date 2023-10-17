@@ -10,6 +10,10 @@ return {
 		"nvim-treesitter/nvim-treesitter-textobjects",
 	},
 	config = function()
+		if vim.g.vscode then
+			return
+		end
+
 		local status, treesitter = pcall(require, "nvim-treesitter.configs")
 		if not status then
 			return
