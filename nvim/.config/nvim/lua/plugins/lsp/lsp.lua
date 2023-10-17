@@ -15,7 +15,7 @@ return {
 
 		local capabilities = cmp.default_capabilities()
 		local on_attach = function(client, bufnr)
-			local on_list = require("plugins.lsp.ignore-modules")
+			local on_list = require("plugins.lsp.utils.ignore-modules")
 			local opts = { noremap = true, silent = true, buffer = bufnr }
 			local bind = vim.keymap.set
 
