@@ -10,5 +10,5 @@ return {
 		},
 	},
 	{ "stevearc/dressing.nvim", event = "VeryLazy" },
-	"jose-elias-alvarez/typescript.nvim",
+	{ "kdheepak/lazygit.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
 }

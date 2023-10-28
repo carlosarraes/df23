@@ -37,9 +37,9 @@ return {
 			bind("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>")
 
 			if client.name == "tsserver" then
-				bind("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
-				bind("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables
-				bind("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports
+				bind("n", "<leader>rf", ":TSToolsRenameFile<CR>") -- rename file and update imports
+				bind("n", "<leader>ri", ":TSToolsRemoveUnused<CR>") -- remove unused variables
+				bind("n", "<leader>ru", ":TSToolsOrganizeImports<CR>") -- organize imports
 			end
 		end
 
