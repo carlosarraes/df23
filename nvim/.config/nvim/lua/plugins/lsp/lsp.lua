@@ -23,7 +23,7 @@ return {
 			bind("n", "gd", function()
 				vim.lsp.buf.definition({ on_list = on_list })
 			end, opts)
-			bind("n", "gv", def_split, opts)
+			bind("n", "gV", def_split, opts)
 			bind("n", "gD", "<cmd>Telescope lsp_references<CR>", opts) -- show references
 			bind("n", "gr", "<cmd>Telescope lsp_references<CR>", opts) -- show references
 			bind("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show references
