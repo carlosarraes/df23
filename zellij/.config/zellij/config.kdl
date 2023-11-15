@@ -124,7 +124,7 @@ keybinds clear-defaults=true {
       bind "Ctrl a" { SwitchToMode "Pane"; }
     }
     shared_except "resize" "locked" {
-      bind "Ctrl n" { SwitchToMode "Resize"; }
+      bind "Ctrl z" { SwitchToMode "Resize"; }
     }
     shared_except "scroll" "locked" {
       bind "Ctrl e" { SwitchToMode "Scroll"; }
