@@ -7,8 +7,8 @@ bind("n", "<C-z>", "u", opts)
 bind("n", "<leader>nh", ":nohl<CR>", opts)
 
 -- Increment/decrement numbers
-bind("n", "<leader>=", "<C-a>", opts) -- increment
-bind("n", "<leader>-", "<C-x>", opts) -- decrement
+bind("n", "=", "<C-a>", opts) -- increment
+bind("n", "-", "<C-x>", opts) -- decrement
 
 -- Window management
 bind("n", "<leader>sv", "<C-w>v", opts) -- split window vertically
@@ -17,11 +17,9 @@ bind("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width & heig
 bind("n", "<leader>sx", ":close<CR>", opts) -- close current split window
 
 -- Buffer management
-bind("n", "<leader>bb", "<C-^>", opts) -- flip buffer
-bind("n", "<leader><Left>", ":bprev<CR>", opts) -- previous buffer
-bind("n", "<leader><Right>", ":bnext<CR>", opts) -- next buffer
+bind("n", "<s-tab>", ":bnext<CR>", opts) -- next buffer
+bind("n", "<tab>", ":bprev<CR>", opts) -- previous buffer
 bind("n", "<leader>x", ":bdelete<CR>", opts)
-bind("n", "<leader>bl", "<cmd>Telescope buffers<cr>", opts) -- list open buffers in current neovim instance
 
 -- Tabs
 bind("n", "<leader>to", ":tabnew<CR>", opts) -- open new tab
@@ -35,8 +33,6 @@ bind("v", "K", ":m '<-2<CR>gv=gv", opts)
 bind("n", "J", "mzJ`z", opts)
 bind("n", "<C-d>", "<C-d>zz", opts)
 bind("n", "<C-u>", "<C-u>zz", opts)
-bind("n", "<c-j>", "<c-d>zz", opts)
-bind("n", "<c-k>", "<c-u>zz", opts)
 bind("n", "<C-Down>", "<C-d>zz", opts)
 bind("n", "<C-Up>", "<C-u>zz", opts)
 bind("n", "n", "nzzzv", opts)
@@ -49,6 +45,15 @@ bind("i", "<A-l>", "<Right>", opts)
 bind("i", "<A-h>", "<Left>", opts)
 bind("i", "<A-j>", "<Down>", opts)
 bind("i", "<A-k>", "<Up>", opts)
+bind("n", "<C-a>", "ggVGo", opts)
+bind("n", "<Return>", "o<ESC>k", opts)
+
+----------------------
+-- Plugin Keybinds
+----------------------
+
+-- Lazy
+bind("n", "<leader>l", ":Lazy<CR>", opts)
 
 -- Clipboard/Yanks
 bind("v", "<leader>y", '"+y', opts) -- Needs xclip (Arch)
@@ -57,26 +62,23 @@ bind("v", "<leader>d", '"_d', opts)
 bind("n", "<leader>d", '"_d', opts)
 bind("n", "x", '"_x', opts)
 
-----------------------
--- Plugin Keybinds
-----------------------
-
 -- Telescope
 bind("n", "<leader>e", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", opts) -- toggle file explorer
-bind("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts) -- find files within current working directory, respects .gitignore
+bind("n", ";f", "<cmd>Telescope find_files<cr>", opts) -- find files within current working directory, respects .gitignore
+bind("n", ";r", "<cmd>Telescope live_grep<cr>", opts) -- find string in current working directory as you type
+bind("n", ";;", "<cmd>Telescope resume<cr>", opts)
+bind("n", ";d", "<cmd>Telescope diagnostics<cr>", opts) -- list all diagnostics
 bind("n", "<leader>fzf", function()
 	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 		previewer = false,
 	}))
 end, opts) -- find string in current buffer
-bind("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", opts) -- find string in current working directory as you type
 bind("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", opts) -- find string under cursor in current working directory
 bind("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts) -- list open buffers in current neovim instance
 bind("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts) -- list available help tags
 bind("n", "<leader>fm", "<cmd>Telescope marks<cr>", opts) -- list all marks
 bind("n", "<leader>ft", "<cmd>Telescope tags<cr>", opts) -- list all tags
 bind("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", opts) -- list recently opened files
-bind("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", opts) -- list all diagnostics
 bind("n", "<leader>dC", "<cmd>Telescope command_history<cr>", opts) -- list all commands
 bind("n", "<leader>dk", "<cmd>Telescope keymaps<cr>", opts) -- list all keymaps
 bind("n", "<leader>dv", "<cmd>Telescope vim_options<cr>", opts) -- list all vim options

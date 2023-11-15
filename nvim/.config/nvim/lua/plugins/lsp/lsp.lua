@@ -33,8 +33,8 @@ return {
 			bind("n", "<space>rn", vim.lsp.buf.rename, opts)
 			bind("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
 			bind("n", "<leader>d", vim.diagnostic.open_float, opts)
-			bind("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
-			bind("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>")
+			bind("n", "<C-p>", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
+			bind("n", "<C-n>", "<cmd>lua vim.diagnostic.goto_next()<CR>")
 
 			if client.name == "tsserver" then
 				bind("n", "<leader>rf", ":TSToolsRenameFile<CR>") -- rename file and update imports
