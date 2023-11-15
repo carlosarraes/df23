@@ -7,6 +7,7 @@ return {
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets",
+		"onsails/lspkind-nvim",
 	},
 	config = function()
 		if vim.g.vscode then
@@ -15,7 +16,40 @@ return {
 
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
+		local lspkind = require("lspkind")
 		require("luasnip.loaders.from_vscode").lazy_load()
+
+		lspkind.init({
+			mode = "symbol_text",
+			preset = "codicons",
+			symbol_map = {
+				Text = "󰉿",
+				Method = "󰆧",
+				Function = "󰊕",
+				Constructor = "",
+				Field = "󰜢",
+				Variable = "󰀫",
+				Class = "󰠱",
+				Interface = "",
+				Module = "",
+				Property = "󰜢",
+				Unit = "󰑭",
+				Value = "󰎠",
+				Enum = "",
+				Keyword = "󰌋",
+				Snippet = "",
+				Color = "󰏘",
+				File = "󰈙",
+				Reference = "󰈇",
+				Folder = "󰉋",
+				EnumMember = "",
+				Constant = "󰏿",
+				Struct = "󰙅",
+				Event = "",
+				Operator = "󰆕",
+				TypeParameter = "",
+			},
+		})
 
 		cmp.setup({
 			competion = {
@@ -25,6 +59,13 @@ return {
 				expand = function(args)
 					luasnip.lsp_expand(args.body)
 				end,
+			},
+			formatting = {
+				format = lspkind.cmp_format({
+					mode = "symbol",
+					maxwidth = 50,
+					ellipsis_char = "...",
+				}),
 			},
 			mapping = cmp.mapping.preset.insert({
 				["<C-p>"] = cmp.mapping.select_prev_item(), -- previous suggestion
