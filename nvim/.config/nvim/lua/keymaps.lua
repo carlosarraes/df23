@@ -17,8 +17,8 @@ bind("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width & heig
 bind("n", "<leader>sx", ":close<CR>", opts) -- close current split window
 
 -- Buffer management
-bind("n", "<s-tab>", ":bnext<CR>", opts) -- next buffer
-bind("n", "<tab>", ":bprev<CR>", opts) -- previous buffer
+bind("n", "<tab>", ":bnext<CR>", opts) -- next buffer
+bind("n", "<s-tab>", ":bprev<CR>", opts) -- previous buffer
 bind("n", "<leader>x", ":bdelete<CR>", opts)
 
 -- Tabs
@@ -72,6 +72,33 @@ bind("n", "<leader>fzf", function()
 	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 		previewer = false,
 	}))
+end, opts) -- find string in current buffer
+bind("n", "<leader>fP", function()
+	require("telescope.builtin").find_files({
+		cwd = require("lazy.core.config").options.root,
+	})
+end, opts) -- find string in current buffer
+bind("n", "\\\\", function()
+	local builtin = require("telescope.builtin")
+	builtin.buffers()
+end, opts) -- find string in current buffer
+bind("n", ";e", function()
+	local telescope = require("telescope")
+
+	local function telescope_buffer_dir()
+		return vim.fn.expand("%:p:h")
+	end
+
+	telescope.extensions.file_browser.file_browser({
+		path = "%:p:h",
+		cwd = telescope_buffer_dir(),
+		respect_gitignore = false,
+		hidden = true,
+		grouped = true,
+		previewer = false,
+		initial_mode = "normal",
+		layout_config = { height = 40 },
+	})
 end, opts) -- find string in current buffer
 bind("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", opts) -- find string under cursor in current working directory
 bind("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts) -- list open buffers in current neovim instance

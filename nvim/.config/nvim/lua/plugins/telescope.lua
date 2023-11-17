@@ -8,47 +8,6 @@ return {
 		"nvim-tree/nvim-web-devicons",
 		"gbprod/yanky.nvim",
 	},
-	keys = {
-		{
-			"<leader>fP",
-			function()
-				require("telescope.builtin").find_files({
-					cwd = require("lazy.core.config").options.root,
-				})
-			end,
-			desc = "Find Plugin File",
-		},
-		{
-			"\\\\",
-			function()
-				local builtin = require("telescope.builtin")
-				builtin.buffers()
-			end,
-			desc = "Lists open buffers",
-		},
-		{
-			";e",
-			function()
-				local telescope = require("telescope")
-
-				local function telescope_buffer_dir()
-					return vim.fn.expand("%:p:h")
-				end
-
-				telescope.extensions.file_browser.file_browser({
-					path = "%:p:h",
-					cwd = telescope_buffer_dir(),
-					respect_gitignore = false,
-					hidden = true,
-					grouped = true,
-					previewer = false,
-					initial_mode = "normal",
-					layout_config = { height = 40 },
-				})
-			end,
-			desc = "Open File Browser with the path of the current buffer",
-		},
-	},
 	config = function(_, opts)
 		if vim.g.vscode then
 			return
@@ -106,7 +65,7 @@ return {
 			},
 		}
 
-		telescope.setup(opts)
+		telescope.setup({})
 
 		telescope.load_extension("fzf")
 		telescope.load_extension("yank_history")
