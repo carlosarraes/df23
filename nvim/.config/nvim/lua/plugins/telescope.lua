@@ -8,7 +8,7 @@ return {
 		"nvim-tree/nvim-web-devicons",
 		"gbprod/yanky.nvim",
 	},
-	config = function(_, opts)
+	config = function()
 		if vim.g.vscode then
 			return
 		end
@@ -20,52 +20,59 @@ return {
 		local utils = require("yanky.utils")
 		local mapping = require("yanky.telescope.mapping")
 
-		opts.defaults = vim.tbl_deep_extend("force", opts.defaults, {
-			wrap_results = true,
-			layout_strategy = "horizontal",
-			layout_config = { prompt_position = "top" },
-			sorting_strategy = "ascending",
-			winblend = 0,
-			grouped = true,
-			mappings = {
-				i = {
-					["<C-p>"] = actions.move_selection_previous,
-					["<C-n>"] = actions.move_selection_next,
-					["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-				},
-			},
-		})
-		opts.extensions = {
-			file_browser = {
-				theme = "dropdown",
-				hijack_netrw = true,
-				mappings = {
-					["i"] = {
-						["A"] = fb_actions.create,
-						["D"] = fb_actions.remove,
-						["Y"] = fb_actions.copy,
-						["M"] = fb_actions.move,
-						["R"] = fb_actions.rename,
-						["."] = fb_actions.toggle_hidden,
-						["<C-d>"] = fb_actions.goto_parent_dir,
-						["<C-p>"] = actions.move_selection_previous,
-						["<C-n>"] = actions.move_selection_next,
-						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+		telescope.setup({
+			extensions = {
+				file_browser = {
+					theme = "dropdown",
+					hijack_netrw = true,
+					mappings = {
+						["i"] = {
+							["A"] = fb_actions.create,
+							["D"] = fb_actions.remove,
+							["Y"] = fb_actions.copy,
+							["M"] = fb_actions.move,
+							["R"] = fb_actions.rename,
+							["."] = fb_actions.toggle_hidden,
+							["<C-d>"] = fb_actions.goto_parent_dir,
+							["<C-p>"] = actions.move_selection_previous,
+							["<C-n>"] = actions.move_selection_next,
+							["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+							["<C-c>"] = actions.close,
+						},
+						["n"] = {
+							["A"] = fb_actions.create,
+							["D"] = fb_actions.remove,
+							["Y"] = fb_actions.copy,
+							["M"] = fb_actions.move,
+							["R"] = fb_actions.rename,
+							["."] = fb_actions.toggle_hidden,
+							["<C-d>"] = fb_actions.goto_parent_dir,
+							["<C-p>"] = actions.move_selection_previous,
+							["<C-n>"] = actions.move_selection_next,
+							["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+							["<C-c>"] = actions.close,
+						},
 					},
 				},
 			},
-		}
-		opts.pickers = {
-			diagnostics = {
-				theme = "ivy",
-				initial_mode = "normal",
-				layout_config = {
-					preview_cutoff = 9999,
+			defaults = {
+				wrap_results = true,
+				layout_strategy = "horizontal",
+				layout_config = { prompt_position = "top" },
+				sorting_strategy = "ascending",
+				winblend = 0,
+				grouped = true,
+			},
+			pickers = {
+				diagnostics = {
+					theme = "ivy",
+					initial_mode = "insert",
+					layout_config = {
+						preview_cutoff = 9999,
+					},
 				},
 			},
-		}
-
-		telescope.setup({})
+		})
 
 		telescope.load_extension("fzf")
 		telescope.load_extension("yank_history")
