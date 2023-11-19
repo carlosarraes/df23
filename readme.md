@@ -58,3 +58,18 @@ sudo pacman -Syu && sudo pacman -S steam
 ```
 sudo pacman -S lxappearance qt5ct kvantum
 ```
+
+## Zsh Plugins
+
+[zsh autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+[zsh syntax highlight](https://github.com/zsh-users/zsh-syntax-highlighting)
+
+### Starship
+
+`curl -sS https://starship.rs/install.sh | sh`
+
+Add this to .zshrc: `eval "$(starship init zsh)"`
+
+### Zoxide
+
+`eval "$(zoxide init zsh)"`
