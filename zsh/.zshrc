@@ -3,6 +3,11 @@ eval "$(starship init zsh)"
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
+export FZF_DEFAULT_OPTS="--height 41% --layout=reverse --border --preview-window=right:60% --preview 'bat --color=always --style=numbers --line-range :400 {}' --bind ctrl-y:preview-up,ctrl-e:preview-down,ctrl-b:preview-page-up,ctrl-f:preview-page-down"
+export FZF_DEFAULT_COMMAND="fd --type f"
 
 # Alias
 alias ls='eza -al --color=always --group-directories-first'
