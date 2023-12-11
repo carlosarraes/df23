@@ -42,7 +42,11 @@ alias dclogs='docker compose logs -f'
 
 v() {
     if [ $# -eq 0 ]; then
-        nvim $(rg --files | fzf)
+        local file
+        file=$(rg --files | fzf)
+        if [ $? -eq 0 ]; then
+            nvim "$file"
+        fi
     else
         nvim "$@"
     fi
