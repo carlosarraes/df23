@@ -9,6 +9,14 @@ source /usr/share/fzf/completion.zsh
 export FZF_DEFAULT_OPTS="--height 41% --layout=reverse --border --preview-window=right:60% --preview 'bat --color=always --style=numbers --line-range :400 {}' --bind ctrl-y:preview-up,ctrl-e:preview-down,ctrl-b:preview-page-up,ctrl-f:preview-page-down"
 export FZF_DEFAULT_COMMAND="fd --type f"
 
+# history
+export HISTFILE=~/.zsh_history
+export HISTSIZE=10000
+export SAVEHIST=10000
+setopt APPEND_HISTORY 
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+
 # Alias
 alias ls='eza -al --color=always --group-directories-first'
 alias la='eza -a --color=always --group-directories-first'
@@ -24,6 +32,8 @@ alias lzg='lazygit'
 alias lzd='lazydocker'
 
 alias cat='bat'
+
+alias screenoff='xrandr --output eDP-1 --off'
 
 alias pm="pnpm"
 alias px="pnpx"
@@ -44,14 +54,16 @@ v() {
     if [ $# -eq 0 ]; then
         local file
         file=$(rg --files | fzf)
-        if [ $? -eq 0 ]; then
-            nvim "$file"
+        if [ $? -eq 0 ]; then  
+            nvim "$file"      
         fi
     else
         nvim "$@"
     fi
 }
 
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export EDITOR='nvim'
