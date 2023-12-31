@@ -15,15 +15,13 @@ return {
 
 		local capabilities = cmp.default_capabilities()
 		local on_attach = function(client, bufnr)
-			local on_list = require("plugins.lsp.utils.ignore-modules")
+			-- local on_list = require("plugins.lsp.utils.ignore-modules")
 			local def_split = require("plugins.lsp.utils.def_split")
 			local opts = { noremap = true, silent = true, buffer = bufnr }
 			local bind = vim.keymap.set
 
-			bind("n", "gd", function()
-				vim.lsp.buf.definition({ on_list = on_list })
-			end, opts)
 			bind("n", "gV", def_split, opts)
+			bind("n", "gd", vim.lsp.buf.definition, opts) -- go to definition
 			bind("n", "gD", "<cmd>Telescope lsp_references<CR>", opts) -- show references
 			bind("n", "gr", "<cmd>Telescope lsp_references<CR>", opts) -- show references
 			bind("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show references
@@ -108,6 +106,11 @@ return {
 					},
 				},
 			},
+		})
+
+		lspconfig["crystalline"].setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
 		})
 	end,
 }
