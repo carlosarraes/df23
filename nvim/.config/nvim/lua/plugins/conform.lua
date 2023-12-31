@@ -28,7 +28,7 @@ return {
 				markdown = { "prettierd" },
 				yaml = { "prettierd" },
 				lua = { "stylua" },
-				python = { "isort", "black" },
+				python = { "ruff_format", "ruff_fix" },
 			},
 			format_on_save = save_config,
 		})

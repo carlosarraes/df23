@@ -32,9 +32,8 @@ return {
 			"eslint_d",
 			"prettierd",
 			"mypy",
-			"isort",
-			"black",
 			"stylua",
+			"ruff",
 		})
 	end,
 }
