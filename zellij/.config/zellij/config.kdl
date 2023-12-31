@@ -1,6 +1,6 @@
 keybinds clear-defaults=true {
     normal {
-      bind "Ctrl p" { SwitchToMode "Pane"; }
+      bind "Ctrl a" { SwitchToMode "Pane"; }
       bind "Ctrl t" { SwitchToMode "Tab"; }
       bind "Ctrl e" { SwitchToMode "Scroll"; }
       bind "Ctrl /" { SwitchToMode "Search"; }
@@ -30,7 +30,7 @@ keybinds clear-defaults=true {
       bind "Right" { MovePane "Right"; }
     }
     pane {
-      bind "Ctrl p" { SwitchToMode "Normal"; }
+      bind "Ctrl a" { SwitchToMode "Normal"; }
       bind "h" "Left" { MoveFocus "Left"; SwitchToMode "Normal"; }
       bind "l" "Right" { MoveFocus "Right"; SwitchToMode "Normal"; }
       bind "j" "Down" { MoveFocus "Down"; SwitchToMode "Normal"; }
@@ -42,7 +42,7 @@ keybinds clear-defaults=true {
       bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
       bind "f" { TogglePaneFrames; SwitchToMode "Normal"; }
       bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
-      bind "Ctrl p" { ToggleFloatingPanes; SwitchToMode "Normal"; }
+      bind "Ctrl a" { ToggleFloatingPanes; SwitchToMode "Normal"; }
       bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
       bind "r" { SwitchToMode "RenamePane"; PaneNameInput 0;}
     }
@@ -107,10 +107,8 @@ keybinds clear-defaults=true {
     shared_except "locked" {
       bind "Ctrl g" { SwitchToMode "Locked"; }
       bind "Alt n" { NewPane; }
-      bind "Ctrl h" "Ctrl Left" { MoveFocusOrTab "Left"; }
-      bind "Ctrl l" "Ctrl Right" { MoveFocusOrTab "Right"; }
-      bind "Ctrl j" "Ctrl Down" { MoveFocus "Down"; }
-      bind "Ctrl k" "Ctrl Up" { MoveFocus "Up"; }
+      bind "Ctrl h" { MoveFocusOrTab "Left"; }
+      bind "Ctrl l" { MoveFocusOrTab "Right"; }
       bind "Alt =" "Alt +" { Resize "Increase"; }
       bind "Alt -" { Resize "Decrease"; }
       bind "Alt [" { PreviousSwapLayout; }
@@ -121,7 +119,7 @@ keybinds clear-defaults=true {
       bind "Enter" "Esc" { SwitchToMode "Normal"; }
     }
     shared_except "pane" "locked" {
-      bind "Ctrl p" { SwitchToMode "Pane"; }
+      bind "Ctrl a" { SwitchToMode "Pane"; }
     }
     shared_except "resize" "locked" {
       bind "Ctrl z" { SwitchToMode "Resize"; }
