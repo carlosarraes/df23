@@ -29,6 +29,7 @@ return {
 				yaml = { "prettierd" },
 				lua = { "stylua" },
 				python = { "ruff_format", "ruff_fix" },
+				rust = { "rustfmt" },
 			},
 			format_on_save = save_config,
 		})

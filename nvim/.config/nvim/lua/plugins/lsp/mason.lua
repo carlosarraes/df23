@@ -24,6 +24,7 @@ return {
 				"emmet_ls",
 				"pyright",
 				"lua_ls",
+				"rust_analyzer",
 			},
 			automatic_installation = true,
 		})
