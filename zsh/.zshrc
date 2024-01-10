@@ -6,9 +6,6 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
-export FZF_DEFAULT_OPTS="--height 41% --layout=reverse --border --preview-window=right:60% --preview 'bat --color=always --style=numbers --line-range :400 {}' --bind ctrl-y:preview-up,ctrl-e:preview-down,ctrl-b:preview-page-up,ctrl-f:preview-page-down"
-export FZF_DEFAULT_COMMAND="fd --type f"
-
 # history
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
@@ -27,6 +24,7 @@ alias ld='eza -ls mod --group-directories-first --color=always'
 alias lda='eza -als mod --group-directories-first --color=always'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ss='grim -g "$(slurp)" - | swappy -f -'
 
 alias lzg='lazygit'
 alias lzd='lazydocker'
@@ -66,4 +64,5 @@ v() {
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export EDITOR='nvim'
+
+export LC_ALL=en_US.UTF-8
