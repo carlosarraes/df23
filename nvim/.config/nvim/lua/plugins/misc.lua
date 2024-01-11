@@ -2,6 +2,7 @@ return {
 	"tpope/vim-surround",
 	"tpope/vim-abolish",
 	"tpope/vim-fugitive",
+	"SmiteshP/nvim-navic",
 	{
 		"tpope/vim-dadbod",
 		dependencies = {

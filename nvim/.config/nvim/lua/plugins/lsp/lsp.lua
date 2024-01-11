@@ -17,6 +17,7 @@ return {
 		local on_attach = function(client, bufnr)
 			-- local on_list = require("plugins.lsp.utils.ignore-modules")
 			local def_split = require("plugins.lsp.utils.def_split")
+			local navic = require("nvim-navic")
 			local opts = { noremap = true, silent = true, buffer = bufnr }
 			local bind = vim.keymap.set
 
@@ -38,6 +39,10 @@ return {
 				bind("n", "<leader>rf", ":TSToolsRenameFile<CR>") -- rename file and update imports
 				bind("n", "<leader>ri", ":TSToolsRemoveUnused<CR>") -- remove unused variables
 				bind("n", "<leader>ru", ":TSToolsOrganizeImports<CR>") -- organize imports
+			end
+
+			if client.server_capabilities.documentSymbolProvider then
+				navic.attach(client, bufnr)
 			end
 		end
 
