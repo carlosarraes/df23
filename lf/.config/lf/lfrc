@@ -1,6 +1,7 @@
 set shell zsh
 
-set previewer ~/.config/lf/lfpv.sh
+set previewer ~/.config/lf/preview
+set cleaner ~/.config/lf/cleaner
 set preview
 set number
 set relativenumber
