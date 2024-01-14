@@ -47,6 +47,7 @@ bind("i", "<A-j>", "<Down>", opts)
 bind("i", "<A-k>", "<Up>", opts)
 bind("n", "<C-a>", "ggVGo", opts)
 bind("n", "<Return>", "o<ESC>k", opts)
+bind("n", "<leader>5", ":UndotreeToggle<CR>", opts)
 
 ----------------------
 -- Plugin Keybinds

@@ -3,6 +3,7 @@ return {
 	"tpope/vim-abolish",
 	"tpope/vim-fugitive",
 	"SmiteshP/nvim-navic",
+	"mbbill/undotree",
 	{
 		"tpope/vim-dadbod",
 		dependencies = {
