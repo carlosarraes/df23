@@ -52,8 +52,8 @@ return {
 		})
 
 		cmp.setup({
-			competion = {
-				completeopt = "menu, menuone,preview,noselect",
+			completion = {
+				completeopt = "menu,menuone,preview,noselect",
 			},
 			snippet = {
 				expand = function(args)
