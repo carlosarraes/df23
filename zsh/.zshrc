@@ -1,6 +1,9 @@
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/fzf/key-bindings.zsh
