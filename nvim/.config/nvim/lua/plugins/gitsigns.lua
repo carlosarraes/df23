@@ -17,14 +17,7 @@ return {
 					vim.keymap.set(mode, l, r, opts)
 				end
 				-- Actions
-				map("n", ";b", function()
-					gs.blame_line({ full = true })
-				end)
 				map("n", ";w", gs.toggle_current_line_blame)
-				map("n", ";d", gs.diffthis)
-				map("n", ";D", function()
-					gs.diffthis("~")
-				end)
 				map("n", ";q", gs.toggle_deleted)
 			end,
 		})

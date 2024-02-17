@@ -64,12 +64,11 @@ bind("n", "<leader>d", '"_d', opts)
 bind("n", "x", '"_x', opts)
 
 -- Telescope
-bind("n", "<leader>e", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", opts) -- toggle file explorer
 bind("n", ";f", "<cmd>Telescope find_files<cr>", opts) -- find files within current working directory, respects .gitignore
 bind("n", ";r", "<cmd>Telescope live_grep<cr>", opts) -- find string in current working directory as you type
 bind("n", ";;", "<cmd>Telescope resume<cr>", opts)
 bind("n", ";d", "<cmd>Telescope diagnostics<cr>", opts) -- list all diagnostics
-bind("n", "<leader>fzf", function()
+bind("n", ";fz", function()
 	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 		previewer = false,
 	}))
@@ -79,7 +78,7 @@ bind("n", "<leader>fP", function()
 		cwd = require("lazy.core.config").options.root,
 	})
 end, opts) -- find string in current buffer
-bind("n", "\\\\", function()
+bind("n", ";b", function()
 	local builtin = require("telescope.builtin")
 	builtin.buffers()
 end, opts) -- find string in current buffer
