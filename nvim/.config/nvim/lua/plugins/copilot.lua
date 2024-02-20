@@ -18,7 +18,7 @@ return {
 					jump_next = "]]",
 					accept = "<CR>",
 					refresh = "gr",
-					open = "<C-4>",
+					open = "<M-4>",
 				},
 				layout = {
 					position = "bottom",
@@ -30,13 +30,12 @@ return {
 				auto_trigger = true,
 				debounce = 75,
 				keymap = {
-					--
-					accept = "<C-Enter>",
+					accept = "<M-1>",
 					accept_word = false,
 					accept_line = false,
-					next = "<C-1>",
-					prev = "<C-2>",
-					dismiss = "<C-[>",
+					next = "<M-2>",
+					prev = "<M-3>",
+					dismiss = "<C-]>",
 				},
 			},
 			filetypes = {
