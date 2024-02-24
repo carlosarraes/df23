@@ -62,7 +62,12 @@ sudo pacman -S lxappearance qt5ct kvantum
 ## Zsh Plugins
 
 [zsh autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+
+`git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions`
+
 [zsh syntax highlight](https://github.com/zsh-users/zsh-syntax-highlighting)
+
+`git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting`
 
 ### Starship
 
@@ -73,3 +78,7 @@ Add this to .zshrc: `eval "$(starship init zsh)"`
 ### Zoxide
 
 `eval "$(zoxide init zsh)"`
+
+### Rustup
+
+`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
