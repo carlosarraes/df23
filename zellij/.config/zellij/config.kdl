@@ -2,7 +2,6 @@ keybinds clear-defaults=true {
     normal {
       bind "Ctrl a" { SwitchToMode "Pane"; }
       bind "Ctrl t" { SwitchToMode "Tab"; }
-      bind "Ctrl e" { SwitchToMode "Scroll"; }
       bind "Ctrl /" { SwitchToMode "Search"; }
       bind "Ctrl x" { SwitchToMode "Session"; }
       bind "Ctrl g" { SwitchToMode "Locked"; }
@@ -66,7 +65,6 @@ keybinds clear-defaults=true {
       bind "a" { ToggleTab; SwitchToMode "Normal"; }
     }
     scroll {
-      bind "Ctrl e" { SwitchToMode "Normal"; }
       bind "e" { EditScrollback; SwitchToMode "Normal"; }
       bind "s" { SwitchToMode "EnterSearch"; SearchInput 0; }
       bind "G" { ScrollToBottom; SwitchToMode "Normal"; }
@@ -123,9 +121,6 @@ keybinds clear-defaults=true {
     }
     shared_except "resize" "locked" {
       bind "Ctrl z" { SwitchToMode "Resize"; }
-    }
-    shared_except "scroll" "locked" {
-      bind "Ctrl e" { SwitchToMode "Scroll"; }
     }
     shared_except "session" "locked" {
       bind "Ctrl x" { SwitchToMode "Session"; }
