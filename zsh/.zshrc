@@ -28,6 +28,8 @@ alias lda='eza -als mod --group-directories-first --color=always'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ss='grim -g "$(slurp)" - | swappy -f -'
+alias s='swappy -f'
+alias wf='wf-recorder -g "$(slurp)"'
 
 alias lzg='lazygit'
 alias lzd='lazydocker'
