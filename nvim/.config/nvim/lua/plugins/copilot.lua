@@ -27,14 +27,14 @@ return {
 			},
 			suggestion = {
 				enabled = true,
-				auto_trigger = true,
+				auto_trigger = false,
 				debounce = 75,
 				keymap = {
-					accept = "<M-1>",
+					accept = "<C-y>",
 					accept_word = false,
 					accept_line = false,
-					next = "<M-2>",
-					prev = "<M-3>",
+					next = "<C-s>",
+					prev = "<C-e>",
 					dismiss = "<C-]>",
 				},
 			},

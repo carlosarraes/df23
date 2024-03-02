@@ -17,15 +17,16 @@ return {
 
 		local capabilities = cmp_lsp.default_capabilities()
 		local on_attach = function(client, bufnr)
-			-- local on_list = require("plugins.lsp.utils.ignore-modules")
+			local on_list = require("plugins.lsp.utils.ignore-modules")
 			local def_split = require("plugins.lsp.utils.def_split")
 			local navic = require("nvim-navic")
 			local opts = { noremap = true, silent = true, buffer = bufnr }
 			local bind = vim.keymap.set
 
 			bind("n", "gV", def_split, opts)
-			bind("n", "gd", vim.lsp.buf.definition, opts) -- go to definition
-			bind("n", "gD", "<cmd>Telescope lsp_references<CR>", opts) -- show references
+			bind("n", "gd", function()
+				vim.lsp.buf.definition({ on_list = on_list })
+			end, opts) -- go to definition
 			bind("n", "gr", "<cmd>Telescope lsp_references<CR>", opts) -- show references
 			bind("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show references
 			bind("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- go to implementation
