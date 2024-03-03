@@ -136,3 +136,9 @@ bind({ "n", "x" }, "gp", "<Plug>(YankyGPutAfter)")
 bind({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)")
 bind("n", "<c-n>", "<Plug>(YankyCycleForward)")
 bind("n", "<c-p>", "<Plug>(YankyCycleBackward)")
+
+-- Assistant
+bind("n", ";c", "<cmd>ChatGPT<CR>", opts)
+bind({ "n", "v" }, ";v", "<cmd>ChatGPTEditWithInstruction<CR>", opts)
+bind({ "n", "v" }, ";ar", "<cmd>ChatGPTRun code_readability_analysis_4<CR>", opts)
+bind({ "n", "v" }, ";ae", "<cmd>ChatGPTRun explain_code_4<CR>", opts)
