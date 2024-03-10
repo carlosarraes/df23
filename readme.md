@@ -6,57 +6,47 @@ Just my dotfiles, taking into consideration win/linux.
 
 ### Essentials (Stow)
 
-```
+```shell
 sudo pacman -S git stow neovim zsh alacritty zellij starship
 ```
 
 ### Terminal
 
-```
-sudo pacman -S neofetch vim xsel eza fd bat ncdu btop htop ncspot ripgrep lazygit zoxide ranger fzf zip unzip
+```shell
+sudo pacman -S neofetch vim eza fd bat ncdu btop htop ncspot ripgrep lazygit zoxide lf fzf zip unzip
 ```
 
-### Distro (Stow)
+### Wayland
 
-```
-sudo pacman -S polybar picom nitrogen rofi
+```shell
+sudo pacman -S wl-clipboard grim swappy slurp wf-recorder waybar hyprpaper mako swayidle
 ```
 
 ### Node (Mason needs it)
 
-```
+```shell
 sudo pacman -S nodejs-lts-hydrogen npm
 ```
 
-## Yay
+## Paru
 
-```
-pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
-```
-
-```
-yay -S visual-studio-code-bin pnpm
+```shell
+sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
 ```
 
 ## Apps
 
-```
-sudo pacman -Spavucontrol obsidian peek simplescreenrecorder flameshot filezilla thunar gvfs thunar-archive-plugin thunar-volman transmission-qt solaar scrcpy lutris chromium
-```
-
-### Steam
-
-Uncomment [multilib] and [Include mirror]
-
-```
-sudoedit /etc/pacman.conf
-sudo pacman -Syu && sudo pacman -S steam
+```shell
+sudo pacman -S pavucontrol peek scrcpy chromium
 ```
 
-## Icons and Settings
+## Thunar
 
-```
-sudo pacman -S lxappearance qt5ct kvantum
+```shell
+sudo pacman -S thunar gvfs thunar-archive-plugin thunar-volman
 ```
 
 ## Zsh Plugins
@@ -68,16 +58,6 @@ sudo pacman -S lxappearance qt5ct kvantum
 [zsh syntax highlight](https://github.com/zsh-users/zsh-syntax-highlighting)
 
 `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting`
-
-### Starship
-
-`curl -sS https://starship.rs/install.sh | sh`
-
-Add this to .zshrc: `eval "$(starship init zsh)"`
-
-### Zoxide
-
-`eval "$(zoxide init zsh)"`
 
 ### Rustup
 
