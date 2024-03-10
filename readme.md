@@ -43,6 +43,12 @@ makepkg -si
 sudo pacman -S pavucontrol peek scrcpy chromium
 ```
 
+## Fonts
+
+```shell
+sudo pacman -S ttf-firacode-nerd ttf-hack-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols-mono ttf-noto-nerd ttf-font-awesome
+```
+
 ## Thunar
 
 ```shell
