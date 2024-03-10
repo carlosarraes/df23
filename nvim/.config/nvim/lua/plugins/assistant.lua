@@ -3,7 +3,7 @@ return {
 	event = "VeryLazy",
 	config = function()
 		local defaults = {
-			api_key_cmd = "pass show chatgpt/api_key",
+			api_key_cmd = "pass show openapi/key",
 			yank_register = "+",
 			edit_with_instructions = {
 				diff = false,
