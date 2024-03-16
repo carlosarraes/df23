@@ -3,6 +3,7 @@ eval "$(starship init zsh)"
 
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
+bindkey '^K' kill-line
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -44,7 +45,7 @@ alias px="pnpx"
 alias purl='curl -X POST'
 
 # Docker
-alias dclear='docker system prune -af'
+alias dclear='docker system prune -af --volumes'
 alias dls='docker container ls -a'
 alias dils='docker image ls -a'
 alias dcup='docker compose up -d'
@@ -74,6 +75,17 @@ vr() {
 		local filename=$(echo $selection | cut -d' ' -f2-)
 		nvim "$linecmd" "$filename"
 	fi
+}
+
+take() {
+	mkdir -p "$1"
+	cd "$1"
+}
+
+note() {
+	echo "[$(date +'%Y-%m-%d %H:%M:%S')] $1" >>"$HOME/notes.md"
+	echo "$@" >>"$HOME/notes.md"
+	echo "" >>"$HOME/notes.md"
 }
 
 lfcd() {
