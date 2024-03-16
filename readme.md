@@ -40,13 +40,14 @@ makepkg -si
 ## Apps
 
 ```shell
-sudo pacman -S pavucontrol peek scrcpy chromium
+sudo pacman -S pavucontrol peek scrcpy chromium zathura zathura-pdf-poppler
 ```
 
 ## Fonts
 
 ```shell
-sudo pacman -S ttf-firacode-nerd ttf-hack-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols-mono ttf-noto-nerd ttf-font-awesome
+sudo pacman -S ttf-firacode-nerd ttf-hack-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols-mono ttf-font-awesome
+sudo pacman -S $(pacman -Ssq noto-fonts)
 ```
 
 ## Thunar
