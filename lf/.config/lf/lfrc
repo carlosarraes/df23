@@ -14,9 +14,10 @@ map <enter> shell
 map ` !true
 
 cmd open &{{
-    case $(file --mime-type -Lb $f) in
+    case $(file --mime-type -Lb "$f") in
+        application/pdf) zathura "$f" > /dev/null 2> /dev/null & disown ;;
         text/*) lf -remote "send $id \$$EDITOR \$fx";;
-        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+        *) for f in $fx; do $OPENER "$f" > /dev/null 2> /dev/null & done;;
     esac
 }}
 
@@ -43,7 +44,7 @@ cmd rg ${{
     [ ! -z "$res" ] && lf -remote "send $id select \"$res\""
 }}
 
-map <c-o> open
+map o open
 map ee $$EDITOR "$f"
 map D delete
 map a rename
