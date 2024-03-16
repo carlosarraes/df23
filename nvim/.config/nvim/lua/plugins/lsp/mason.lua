@@ -25,6 +25,8 @@ return {
 				"pyright",
 				"lua_ls",
 				"rust_analyzer",
+				"gopls",
+				"bashls",
 			},
 			automatic_installation = true,
 		})
@@ -35,6 +37,10 @@ return {
 			"mypy",
 			"stylua",
 			"ruff",
+			"goimports",
+			"gofumpt",
+			"shellcheck",
+			"shfmt",
 		})
 	end,
 }

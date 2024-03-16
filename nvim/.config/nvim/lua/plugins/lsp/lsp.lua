@@ -12,6 +12,7 @@ return {
 		end
 
 		local lspconfig = require("lspconfig")
+		local util = require("lspconfig/util")
 		local cmp_lsp = require("cmp_nvim_lsp")
 		local cmp = require("cmp")
 
@@ -142,6 +143,29 @@ return {
 		lspconfig["rust_analyzer"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
+		})
+
+		lspconfig["gopls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			cmd = { "gopls", "serve" },
+			filetypes = { "go", "gomod", "gowork", "gotmpl" },
+			root_dir = util.root_pattern("go.mod", ".git"),
+			settings = {
+				gopls = {
+					usePlaceholders = true,
+					analyses = {
+						unusedparams = true,
+					},
+				},
+			},
+		})
+
+		lspconfig["bashls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			cmd = { "bash-language-server", "start" },
+			filetypes = { "sh", "bash", "zsh" },
 		})
 	end,
 }

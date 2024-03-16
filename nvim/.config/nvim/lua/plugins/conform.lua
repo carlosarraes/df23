@@ -30,6 +30,9 @@ return {
 				lua = { "stylua" },
 				python = { "ruff_format", "ruff_fix" },
 				rust = { "rustfmt" },
+				go = { "goimports", "gofumpt" },
+				sh = { "shfmt" },
+				zsh = { "shfmt" },
 			},
 			format_on_save = save_config,
 		})
