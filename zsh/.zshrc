@@ -84,8 +84,12 @@ take() {
 
 note() {
 	echo "[$(date +'%Y-%m-%d %H:%M:%S')] $1" >>"$HOME/notes.md"
-	echo "$@" >>"$HOME/notes.md"
-	echo "" >>"$HOME/notes.md"
+	echo "$@" >>"$HOME/scripts/notes.md"
+	echo "" >>"$HOME/scripts/notes.md"
+}
+
+view_notes() {
+	gum pager <"$HOME/scripts/notes.md"
 }
 
 lfcd() {
