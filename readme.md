@@ -25,7 +25,7 @@ sudo pacman -S wl-clipboard grim swappy slurp wf-recorder waybar hyprpaper mako 
 ### Node (Mason needs it)
 
 ```shell
-sudo pacman -S nodejs-lts-hydrogen npm
+sudo pacman -S nodejs-lts-iron npm
 ```
 
 ## Paru
@@ -36,6 +36,10 @@ git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
 ```
+
+## Yay
+
+`pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si`
 
 ## Apps
 
@@ -57,6 +61,8 @@ sudo pacman -S thunar gvfs thunar-archive-plugin thunar-volman
 ```
 
 ## Zsh Plugins
+
+`chsh -s /bin/zsh`
 
 [zsh autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 
