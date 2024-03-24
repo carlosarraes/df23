@@ -3,6 +3,7 @@
 export FZF_DEFAULT_OPTS="--height 41% --layout=reverse --border --preview-window=right:60% --preview 'bat --color=always --style=numbers --line-range :400 {}' --bind ctrl-y:preview-up,ctrl-e:preview-down,ctrl-b:preview-page-up,ctrl-f:preview-page-down"
 export FZF_DEFAULT_COMMAND="fd --type f"
 export PATH=$PATH:$HOME/scripts
+export WLR_NO_HARDWARE_CURSORS=1
 
 export PATH=$PATH:~/go/bin
 
