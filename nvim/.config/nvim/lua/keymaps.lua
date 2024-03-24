@@ -68,6 +68,7 @@ bind("n", ";f", "<cmd>Telescope find_files<cr>", opts) -- find files within curr
 bind("n", ";r", "<cmd>Telescope live_grep<cr>", opts) -- find string in current working directory as you type
 bind("n", ";;", "<cmd>Telescope resume<cr>", opts)
 bind("n", ";d", "<cmd>Telescope diagnostics<cr>", opts) -- list all diagnostics
+bind("n", ";t", ":TodoTelescope<CR>", opts) -- list all diagnostics
 bind("n", ";z", function()
 	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 		previewer = false,
