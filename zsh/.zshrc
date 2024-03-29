@@ -44,6 +44,27 @@ alias px="pnpx"
 
 alias purl='curl -X POST'
 
+# Ledger
+alias h="hledger"
+alias hbal="hledger bal"
+
+hp() {
+	hledger bal --period "$(date "+%Y-%m")"
+}
+
+hlast() {
+	hledger bal --period "last month"
+}
+
+hie() {
+	hledger income --period "$(date "+%Y-%m")"
+	hledger expenses --period "$(date "+%Y-%m")"
+}
+
+hytd() {
+	hledger bal --period "this year"
+}
+
 # Docker
 alias dclear='docker system prune -af --volumes'
 alias dls='docker container ls -a'
@@ -111,3 +132,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 export LC_ALL=en_US.UTF-8
+
+# Turso
+export PATH="/home/carraes/.turso:$PATH"
