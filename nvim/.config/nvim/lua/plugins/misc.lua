@@ -15,4 +15,5 @@ return {
 	{ "stevearc/dressing.nvim", event = "VeryLazy" },
 	{ "kdheepak/lazygit.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
 	"vim-crystal/vim-crystal",
+	"cbarrete/tree-sitter-ledger",
 }
