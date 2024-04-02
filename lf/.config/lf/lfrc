@@ -45,8 +45,10 @@ cmd rg ${{
 }}
 
 map o open
-map ee $$EDITOR "$f"
+map e $$EDITOR "$f"
 map D delete
 map a rename
 map F fzf
 map R rg
+map J :updir; down; open
+map K :updir; up; open
