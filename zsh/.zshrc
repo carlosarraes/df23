@@ -45,6 +45,7 @@ alias px="pnpx"
 alias purl='curl -X POST'
 
 # Ledger
+alias hv="v ~/finance/2024.journal"
 alias h="hledger"
 alias hbal="hledger bal"
 
