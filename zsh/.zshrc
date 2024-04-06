@@ -50,7 +50,7 @@ alias h="hledger"
 alias hbal="hledger bal"
 
 hp() {
-	hledger bal --period "$(date "+%Y-%m")"
+	hledger bal --period "until today"
 }
 
 hlast() {
@@ -136,3 +136,7 @@ export LC_ALL=en_US.UTF-8
 
 # Turso
 export PATH="/home/carraes/.turso:$PATH"
+
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
