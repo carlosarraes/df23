@@ -28,9 +28,11 @@ alias ld='eza -ls mod --group-directories-first --color=always'
 alias lda='eza -als mod --group-directories-first --color=always'
 alias ..='cd ..'
 alias ...='cd ../..'
-alias ss='grim -g "$(slurp)" - | swappy -f -'
+alias ss='grim -g "$(slurp)"'
 alias s='swappy -f'
 alias wf='wf-recorder -g "$(slurp)"'
+alias k='kubectl'
+alias h='http'
 
 alias lzg='lazygit'
 alias lzd='lazydocker'
@@ -39,14 +41,13 @@ alias cat='bat'
 
 alias screenoff='xrandr --output eDP-1 --off'
 
-alias pm="pnpm"
+alias pn="pnpm"
 alias px="pnpx"
 
 alias purl='curl -X POST'
 
 # Ledger
 alias hv="v ~/finance/2024.journal"
-alias h="hledger"
 alias hbal="hledger bal"
 
 hp() {
@@ -140,3 +141,11 @@ export PATH="/home/carraes/.turso:$PATH"
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# pnpm
+export PNPM_HOME="/home/carraes/.local/share/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
