@@ -144,3 +144,12 @@ bind("n", "\\c", "<cmd>DapContinue<cr>", opts)
 bind("n", "\\s", "<cmd>DapStepOver<cr>", opts)
 bind("n", "\\f", "<cmd>DapStepInto<cr>", opts)
 bind("n", "\\k", "<cmd>DapTerminate<cr>", opts)
+
+-- CChat
+bind("n", ";ct", ":CopilotChatToggle<cr>", opts)
+bind({ "n", "v" }, ";cc", ":CopilotChat<cr>", opts)
+bind({ "n", "v" }, ";co", ":CopilotChatOptimize<cr>", opts)
+bind({ "n", "v" }, ";ct", ":CopilotChatTests<cr>", opts)
+bind({ "n", "v" }, ";cr", ":CopilotChatReview<cr>", opts)
+bind({ "n", "v" }, ";cf", ":CopilotChatFix<cr>", opts)
+bind({ "n", "v" }, ";cd", ":CopilotChatFixDiagnostic<cr>", opts)
