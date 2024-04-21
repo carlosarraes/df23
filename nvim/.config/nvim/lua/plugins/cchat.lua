@@ -6,6 +6,6 @@ return {
 		{ "nvim-lua/plenary.nvim" },
 	},
 	opts = {
-		debug = true,
+		debug = false,
 	},
 }
