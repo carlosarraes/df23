@@ -50,6 +50,16 @@ alias purl='curl -X POST'
 alias hv="v ~/finance/2024.journal"
 alias hbal="hledger bal"
 
+yt() {
+	yt-dlp -o - "$1" | mpv -
+}
+
+ytl() {
+	while IFS= read -r line; do
+		yt "$line"
+	done <"./videos.txt"
+}
+
 hp() {
 	hledger bal --period "until today"
 }
