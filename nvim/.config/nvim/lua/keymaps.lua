@@ -83,24 +83,6 @@ bind("n", ";b", function()
 	local builtin = require("telescope.builtin")
 	builtin.buffers()
 end, opts) -- find string in current buffer
-bind("n", ";e", function()
-	local telescope = require("telescope")
-
-	local function telescope_buffer_dir()
-		return vim.fn.expand("%:p:h")
-	end
-
-	telescope.extensions.file_browser.file_browser({
-		path = "%:p:h",
-		cwd = telescope_buffer_dir(),
-		respect_gitignore = false,
-		hidden = true,
-		grouped = true,
-		previewer = false,
-		initial_mode = "normal",
-		layout_config = { height = 40 },
-	})
-end, opts) -- find string in current buffer
 bind("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", opts) -- find string under cursor in current working directory
 bind("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts) -- list open buffers in current neovim instance
 bind("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts) -- list available help tags
