@@ -44,6 +44,9 @@ cmd rg ${{
     [ ! -z "$res" ] && lf -remote "send $id select \"$res\""
 }}
 
+cmd mkdir %IFS=" "; mkdir -- "$*"
+map a push :mkdir<space>
+
 map o open
 map e $$EDITOR "$f"
 map D delete
