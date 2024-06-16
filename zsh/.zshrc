@@ -44,11 +44,8 @@ alias screenoff='xrandr --output eDP-1 --off'
 alias pn="pnpm"
 alias px="pnpx"
 
-alias purl='curl -X POST'
-
-# Ledger
-alias hv="v ~/finance/2024.journal"
-alias hbal="hledger bal"
+# Rust
+alias cwr="cargo watch -q -c -x 'run -q'"
 
 yt() {
 	yt-dlp -o - "$1" | mpv -
@@ -58,23 +55,6 @@ ytl() {
 	while IFS= read -r line; do
 		yt "$line"
 	done <"./videos.txt"
-}
-
-hp() {
-	hledger bal --period "until today"
-}
-
-hlast() {
-	hledger bal --period "last month"
-}
-
-hie() {
-	hledger income --period "$(date "+%Y-%m")"
-	hledger expenses --period "$(date "+%Y-%m")"
-}
-
-hytd() {
-	hledger bal --period "this year"
 }
 
 # Docker
