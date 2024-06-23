@@ -110,7 +110,6 @@ bind("n", "gh", "<cmd>diffget //3<cr>", opts) -- get the lower version of a diff
 
 -- lazygit
 bind("n", "<leader>gg", ":LazyGit<CR>", opts)
-bind("n", "<leader>gf", ":LazyGitFilter<CR>", opts)
 
 -- Yanky
 bind({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
@@ -136,3 +135,13 @@ bind({ "n", "v" }, ";ce", ":CopilotChatExplain<cr>", opts)
 bind({ "n", "v" }, ";cr", ":CopilotChatReview<cr>", opts)
 bind({ "n", "v" }, ";cf", ":CopilotChatFix<cr>", opts)
 bind({ "n", "v" }, ";cd", ":CopilotChatFixDiagnostic<cr>", opts)
+
+-- Obsidian
+-- start obsidian
+bind("n", ";oc", "<cmd>lua require('obsidian').util.toggle_checkbox()<cr>", opts)
+bind("n", ";ot", ":ObsidianTemplate<CR>", opts)
+bind("n", ";oo", ":ObsidianOpen<CR>", opts)
+bind("n", ";on", ":ObsidianNew<CR>", opts)
+bind("n", ";os", ":ObsidianSearch<CR>", opts)
+bind("n", ";ol", ":ObsidianLinks<CR>", opts)
+bind("n", ";oq", ":ObsidianQuickSwitch<CR>", opts)
