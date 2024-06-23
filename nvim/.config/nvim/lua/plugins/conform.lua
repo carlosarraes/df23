@@ -33,6 +33,7 @@ return {
 				go = { "goimports", "gofumpt" },
 				sh = { "shfmt" },
 				zsh = { "shfmt" },
+				java = { "google-java-format" },
 			},
 			format_on_save = save_config,
 		})
