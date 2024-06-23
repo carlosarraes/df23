@@ -33,6 +33,7 @@ alias s='swappy -f'
 alias wf='wf-recorder -g "$(slurp)"'
 alias k='kubectl'
 alias h='http'
+alias t='transmission-cli'
 
 alias lzg='lazygit'
 alias lzd='lazydocker'
