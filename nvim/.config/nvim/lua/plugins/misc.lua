@@ -5,6 +5,7 @@ return {
 	"SmiteshP/nvim-navic",
 	"mbbill/undotree",
 	"sindrets/diffview.nvim",
+	"mfussenegger/nvim-jdtls",
 	{
 		"tpope/vim-dadbod",
 		dependencies = {
