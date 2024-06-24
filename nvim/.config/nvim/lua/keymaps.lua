@@ -64,25 +64,7 @@ bind("n", "<leader>d", '"_d', opts)
 bind("n", "x", '"_x', opts)
 
 -- Telescope
-bind("n", ";f", "<cmd>Telescope find_files<cr>", opts) -- find files within current working directory, respects .gitignore
-bind("n", ";r", "<cmd>Telescope live_grep<cr>", opts) -- find string in current working directory as you type
-bind("n", ";;", "<cmd>Telescope resume<cr>", opts)
-bind("n", ";d", "<cmd>Telescope diagnostics<cr>", opts) -- list all diagnostics
 bind("n", ";t", ":TodoTelescope<CR>", opts) -- list all diagnostics
-bind("n", ";z", function()
-	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-		previewer = false,
-	}))
-end, opts) -- find string in current buffer
-bind("n", "<leader>fP", function()
-	require("telescope.builtin").find_files({
-		cwd = require("lazy.core.config").options.root,
-	})
-end, opts) -- find string in current buffer
-bind("n", ";b", function()
-	local builtin = require("telescope.builtin")
-	builtin.buffers()
-end, opts) -- find string in current buffer
 bind("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", opts) -- find string under cursor in current working directory
 bind("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts) -- list open buffers in current neovim instance
 bind("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts) -- list available help tags
@@ -136,8 +118,13 @@ bind({ "n", "v" }, ";cr", ":CopilotChatReview<cr>", opts)
 bind({ "n", "v" }, ";cf", ":CopilotChatFix<cr>", opts)
 bind({ "n", "v" }, ";cd", ":CopilotChatFixDiagnostic<cr>", opts)
 
+-- FzfLua
+bind("n", ";f", "<cmd>lua require('fzf-lua').files()<cr>", opts)
+bind("n", ";r", "<cmd>lua require('fzf-lua').live_grep_glob()<cr>", opts)
+bind("n", ";e", "<cmd>lua require('fzf-lua').live_grep_glob({ filter = \"rg -v 'test/'\" })<cr>", opts)
+bind("n", ";;", "<cmd>lua require('fzf-lua').resume()<cr>", opts)
+
 -- Obsidian
--- start obsidian
 bind("n", ";oc", "<cmd>lua require('obsidian').util.toggle_checkbox()<cr>", opts)
 bind("n", ";ot", ":ObsidianTemplate<CR>", opts)
 bind("n", ";oo", ":ObsidianOpen<CR>", opts)

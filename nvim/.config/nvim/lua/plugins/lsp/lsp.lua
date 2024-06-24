@@ -28,9 +28,9 @@ return {
 			bind("n", "gd", function()
 				vim.lsp.buf.definition({ on_list = on_list })
 			end, opts) -- go to definition
-			bind("n", "gr", "<cmd>Telescope lsp_references<CR>", opts) -- show references
-			bind("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show references
-			bind("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- go to implementation
+			bind("n", "gr", "<cmd>lua require('fzf-lua').lsp_references()<cr>", opts) -- show references
+			bind("n", "gi", "<cmd>lua require('fzf-lua').lsp_implementations()<cr>", opts) -- show references
+			bind("n", "gt", "<cmd>lua require('fzf-lua').lsp_typedefs()<cr>", opts) -- show references
 			bind("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 			bind({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
 			bind("n", "<space>rn", vim.lsp.buf.rename, opts)
