@@ -7,7 +7,7 @@ bind("n", "<C-z>", "u", opts)
 bind("n", "<leader>nh", ":nohl<CR>", opts)
 
 -- Increment/decrement numbers
-bind("n", "=", "<C-a>", opts) -- increment
+bind("n", "=", "<C-i>", opts) -- increment
 bind("n", "-", "<C-x>", opts) -- decrement
 
 -- Window management
@@ -120,8 +120,8 @@ bind({ "n", "v" }, ";cd", ":CopilotChatFixDiagnostic<cr>", opts)
 
 -- FzfLua
 bind("n", ";f", "<cmd>lua require('fzf-lua').files()<cr>", opts)
-bind("n", ";r", "<cmd>lua require('fzf-lua').live_grep_glob()<cr>", opts)
-bind("n", ";e", "<cmd>lua require('fzf-lua').live_grep_glob({ filter = \"rg -v 'test/'\" })<cr>", opts)
+bind("n", ";e", "<cmd>lua require('fzf-lua').live_grep_glob()<cr>", opts)
+bind("n", ";r", "<cmd>lua require('fzf-lua').live_grep_glob({ filter = \"rg -v '*tests/'\" })<cr>", opts)
 bind("n", ";;", "<cmd>lua require('fzf-lua').resume()<cr>", opts)
 
 -- Obsidian
@@ -132,3 +132,7 @@ bind("n", ";on", ":ObsidianNew<CR>", opts)
 bind("n", ";os", ":ObsidianSearch<CR>", opts)
 bind("n", ";ol", ":ObsidianLinks<CR>", opts)
 bind("n", ";oq", ":ObsidianQuickSwitch<CR>", opts)
+
+-- Floaterm
+bind("n", "<C-t>", ":FloatermToggle<CR>", opts)
+bind("t", "<C-t>", "<C-\\><C-n>:FloatermToggle<CR>", opts)

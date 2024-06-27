@@ -6,6 +6,7 @@ return {
 	"mbbill/undotree",
 	"sindrets/diffview.nvim",
 	"mfussenegger/nvim-jdtls",
+	"voldikss/vim-floaterm",
 	{
 		"tpope/vim-dadbod",
 		dependencies = {
