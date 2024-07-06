@@ -32,7 +32,7 @@ alias ss='grim -g "$(slurp)"'
 alias s='swappy -f'
 alias wf='wf-recorder -g "$(slurp)"'
 alias k='kubectl'
-alias h='http'
+alias c='curlie'
 alias t='transmission-cli'
 
 alias lzg='lazygit'
