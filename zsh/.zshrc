@@ -28,6 +28,7 @@ alias ld='eza -ls mod --group-directories-first --color=always'
 alias lda='eza -als mod --group-directories-first --color=always'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
 alias ss='grim -g "$(slurp)"'
 alias s='swappy -f'
 alias wf='wf-recorder -g "$(slurp)"'
@@ -140,3 +141,7 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
